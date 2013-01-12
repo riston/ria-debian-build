@@ -1,22 +1,3 @@
-Index: cmake/modules/FindPCSCLite.cmake
-===================================================================
---- cmake/modules/FindPCSCLite.cmake	(revision 60)
-+++ cmake/modules/FindPCSCLite.cmake	(working copy)
-@@ -21,12 +21,14 @@
-   ${PC_PCSCLITE_INCLUDEDIR}
-   ${PC_PCSCLITE_INCLUDE_DIRS}
-   ${PC_PCSCLITE_INCLUDE_DIRS}/PCSC
-+  /usr/include/PCSC
-   )
- 
- FIND_LIBRARY(PCSCLITE_LIBRARY NAMES pcsclite libpcsclite PCSC
-   HINTS
-   ${PC_PCSCLITE_LIBDIR}
-   ${PC_PCSCLITE_LIBRARY_DIRS}
-+  /usr/lib/x86_64-linux-gnu
-   )
- 
- # handle the QUIETLY and REQUIRED arguments and set PCSCLITE_FOUND to TRUE if 
 Index: packaging/ubuntu/debian_libdigidoc/control
 ===================================================================
 --- packaging/ubuntu/debian_libdigidoc/control	(revision 60)
@@ -27,7 +8,7 @@ Index: packaging/ubuntu/debian_libdigidoc/control
  Maintainer: ria <info@ria.ee>
 -Build-Depends: cdbs, cmake, opensc, libssl-dev, libxml2-dev
 +Build-Depends: cdbs, cmake, libssl-dev, libxml2-dev
- Standards-Version: 3.8.3
+ Standards-Version: 3.9.3
  Homepage: http://www.ria.ee
  
 Index: packaging/build.sh
@@ -71,16 +52,3 @@ Index: packaging/build.sh
    if [ $MOUNT_RESULT -eq 0 ] ; then
      echo "remote $EXTERNAL_REPOSITORY mounted to $REPOSITORY"
     else
-Index: qesteidutil/CMakeLists.txt
-===================================================================
---- qesteidutil/CMakeLists.txt	(revision 60)
-+++ qesteidutil/CMakeLists.txt	(working copy)
-@@ -8,7 +8,7 @@
- include( GNUInstallDirs )
- include( VersionInfo )
- 
--find_package(Qt4 4.7.0 COMPONENTS QtCore QtGui QtNetwork REQUIRED)
-+find_package(Qt4 4.6.3 COMPONENTS QtCore QtGui QtNetwork REQUIRED)
- find_package(OpenSSL REQUIRED)
- find_package(PKCS11)
- find_package(SmartCardpp REQUIRED)

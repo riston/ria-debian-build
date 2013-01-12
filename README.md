@@ -11,7 +11,7 @@ Building RIA ID-card software v3.7.0 packages on Debian
 sudo apt-get install --no-install-recommends subversion doxygen xsdcxx cdbs \
 cmake build-essential libxml2-dev ruby zip rubygems dpkg-dev libssl-dev \
 libp11-dev libpcsclite-dev libldap2-dev libgtk2.0-dev libqt4-dev \
-libxerces-c-dev libxml-security-c-dev libtool autoconf automake
+libxerces-c-dev libxml-security-c-dev libtool autoconf automake fakeroot
 
 # check out the source code.
 svn co https://svn.eesti.ee/projektid/idkaart_public/branches/3.7 idkaart

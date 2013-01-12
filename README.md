@@ -2,7 +2,7 @@ Building RIA ID-card software v3.7.0 packages on Debian
 =======================================================
 
 *  This is provided on AS IS basis, no warranty whatsoever.
-*  This works for me on Debian 7.0 amd64, YMMV.
+*  This works for me on Debian 7.0 amd64, YMMV. Ubuntu 12.10 also.
 *  Debian 6.0 (Squeeze) users a stuck with v3.6 and should use the [debian6 branch](https://github.com/martinpaljak/ria-debian-build/tree/debian6)
 *  Make sure you can use sudo (add yourself to "sudo" group)!
 

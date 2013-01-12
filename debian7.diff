@@ -1,0 +1,54 @@
+Index: packaging/ubuntu/debian_libdigidoc/control
+===================================================================
+--- packaging/ubuntu/debian_libdigidoc/control	(revision 60)
++++ packaging/ubuntu/debian_libdigidoc/control	(working copy)
+@@ -2,7 +2,7 @@
+ Section: libs
+ Priority: extra
+ Maintainer: ria <info@ria.ee>
+-Build-Depends: cdbs, cmake, opensc, libssl-dev, libxml2-dev
++Build-Depends: cdbs, cmake, libssl-dev, libxml2-dev
+ Standards-Version: 3.9.3
+ Homepage: http://www.ria.ee
+ 
+Index: packaging/build.sh
+===================================================================
+--- packaging/build.sh	(revision 60)
++++ packaging/build.sh	(working copy)
+@@ -1,8 +1,5 @@
+ #!/bin/bash
+ 
+-ifconfig || echo "ifconfig not found"
+-env
+-
+ if [ `uname` == "Darwin" ]
+ then
+   TARGET_OS=mac
+@@ -34,7 +31,8 @@
+   else
+     TARGET_OS=ubuntu
+   fi
+-
++  # override to always build a DEB
++  TARGET_OS=ubuntu
+   cd idkaart/current/packaging/$TARGET_OS
+ 
+   SVN_REVISION=`svnversion . | sed -r "s/([0-9]*:)?([0-9]+).*?/\2/"`
+@@ -48,12 +46,12 @@
+   fi
+   echo "======= module repository: $REPOSITORY"
+ 
+-  REPOSITORY=/mnt/build-repository
++  REPOSITORY=${HOME}/repository
+ 
+-  umount $REPOSITORY || echo "not mounted"
+-  echo "mounting sshfs..."
+-  sshfs administrator@10.0.25.57:$EXTERNAL_REPOSITORY $REPOSITORY -o nonempty
+-  MOUNT_RESULT=$?
++#  umount $REPOSITORY || echo "not mounted"
++#  echo "mounting sshfs..."
++#  sshfs administrator@10.0.25.57:$EXTERNAL_REPOSITORY $REPOSITORY -o nonempty
++  MOUNT_RESULT=0
+   if [ $MOUNT_RESULT -eq 0 ] ; then
+     echo "remote $EXTERNAL_REPOSITORY mounted to $REPOSITORY"
+    else

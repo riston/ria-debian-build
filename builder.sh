@@ -23,7 +23,7 @@ mkdir -p $HOME/repository/ubuntu/debs
 export BUILD_NUMBER=wtf # put your own fun tag here
 
 # remove opensc if built from source or installed from unstable
-for f in esteidcerts libdigidoc  libdigidocpp qdigidoc smartcardpp qesteidutil esteidfirefoxplugin esteidpkcs11loader estonianidcard opensc
+for f in esteidcerts libdigidoc  libdigidocpp qdigidoc smartcardpp qesteidutil esteidfirefoxplugin estonianidcard opensc
 do
 	ruby idkaart/current/packaging/build.rb $f
 	(cd $HOME/repository && dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz)

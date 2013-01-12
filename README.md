@@ -35,7 +35,8 @@ sudo apt-get install libnss3-tools
 modutil  -dbdir sql:$HOME/.pki/nssdb -delete opensc-pkcs11
 modutil  -dbdir sql:$HOME/.pki/nssdb -add opensc-pkcs11 -libfile onepin-opensc-pkcs11.so -mechanisms FRIENDLY
 
-# then go to "about:plugins" and select "Always allow" for "EstEID plug-in" (or you will have to manually select "Always allow for this site")
+# then go to "about:plugins" and select "Always allow" for "EstEID plug-in" 
+# (or you will have to manually select "Always allow for this site")
 
 ```
 

@@ -1,4 +1,4 @@
-Building RIA ID-card software v3.7.0 packages on Debian
+Building RIA ID-card software v3.7.1 packages on Debian
 =======================================================
 
 *  This is provided on AS IS basis, no warranty whatsoever.
@@ -18,7 +18,7 @@ libp11-dev libpcsclite-dev libldap2-dev libgtk2.0-dev libqt4-dev \
 libxerces-c-dev libxml-security-c-dev libtool autoconf automake fakeroot
 
 # check out the source code.
-svn co https://svn.eesti.ee/projektid/idkaart_public/branches/3.7 idkaart
+svn co https://svn.eesti.ee/projektid/idkaart_public/branches/3.7.1 idkaart
 
 # add your private repository to /etc/apt/sources.list. DO THIS ONLY ONCE!
 sudo sh -c "echo 'deb file://$HOME/repository ./' >> /etc/apt/sources.list"

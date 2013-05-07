@@ -52,3 +52,16 @@ Index: packaging/build.sh
    if [ $MOUNT_RESULT -eq 0 ] ; then
      echo "remote $EXTERNAL_REPOSITORY mounted to $REPOSITORY"
     else
+Index: cmake/modules/FindLibDigiDocpp.cmake
+===================================================================
+--- cmake/modules/FindLibDigiDocpp.cmake	(revision 96)
++++ cmake/modules/FindLibDigiDocpp.cmake	(working copy)
+@@ -12,7 +12,7 @@
+   SET(LIBDIGIDOCPP_FIND_QUIETLY TRUE)
+ ENDIF (LIBDIGIDOCPP_INCLUDE_DIR)
+ 
+-FIND_PATH(LIBDIGIDOCPP_INCLUDE_DIR digidocpp/Container.h HINTS /Library/EstonianIDCard PATH_SUFFIXES include)
++FIND_PATH(LIBDIGIDOCPP_INCLUDE_DIR digidocpp/BDoc.h HINTS /Library/EstonianIDCard PATH_SUFFIXES include)
+ FIND_FILE(LIBDIGIDOCPP_CONF digidocpp.conf /etc/digidocpp /usr/local/etc/digidocpp)
+ FIND_LIBRARY(LIBDIGIDOCPP_LIBRARY NAMES digidocpp HINTS /Library/EstonianIDCard/lib)
+ 

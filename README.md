@@ -8,6 +8,9 @@ Building RIA ID-card software v3.7.0 packages on Debian
 *  There are proper tarballs now available, for packages built from those tarballs, have a look at https://code.launchpad.net/~boamaod/+junk/eid-debs
 
 ```
+# clone this repostiory (to get the diff!)
+git clone https://github.com/martinpaljak/ria-debian-build.git
+cd ria-debian-build
 # install dependencies
 sudo apt-get install --no-install-recommends subversion doxygen xsdcxx cdbs \
 cmake build-essential libxml2-dev ruby zip rubygems dpkg-dev libssl-dev \
